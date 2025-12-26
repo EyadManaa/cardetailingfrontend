@@ -1,0 +1,83 @@
+.home-page {
+    /* Base styles if needed */
+}
+
+.hero {
+    height: 80vh;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    color: white;
+}
+
+.hero-overlay {
+    background: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+/* Features Section */
+.features-section {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 0 20px 4rem 20px;
+    margin-top: 4rem;
+    /* Moved down below hero */
+    position: relative;
+    z-index: 10;
+    flex-wrap: wrap;
+}
+
+.feature-card {
+    background: white;
+    padding: 2.5rem 2rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    /* Soft, premium shadow */
+    text-align: center;
+    flex: 1;
+    min-width: 280px;
+    max-width: 350px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    outline: 1px solid var(--hover-color);
+}
+
+.feature-icon {
+    width: 84px;
+    height: 84px;
+    margin: 0 auto 1.5rem auto;
+    color: var(--primary-color);
+    object-fit: contain;
+}
+
+.feature-card h3 {
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    /* Darker than standard text for headings */
+}
+
+.feature-card p {
+    color: #555;
+    line-height: 1.6;
+    font-size: 1rem;
+}

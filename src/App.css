@@ -1,38 +1,96 @@
+:root {
+  /* Sage Blue Theme */
+  --primary-color: #5F8595;
+  /* Sage Blue */
+  --primary-hover: #4A6D7C;
+  --hover-color: #556B6F;
+  /* Dark Sage Blue Hover */
+  --secondary-color: #78909C;
+  /* Muted Blue Grey */
+  --accent-color: #FFD54F;
+  /* Soft Gold for contrast */
+  --dark-bg: #355c6c;
+  /* Dark Blue Grey */
+  --light-bg: #ECEFF1;
+  /* Very Light Blue Grey */
+  --text-color: #37474F;
+  /* Dark Slate */
+  --text-light: #ECEFF1;
+  --card-bg: #FFFFFF;
+  --shadow: 0 4px 6px rgba(38, 50, 56, 0.1);
+  --transition: all 0.3s ease;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--light-bg);
+  color: var(--text-color);
+}
+
+.btn-link:hover {
+  color: var(--hover-color);
+  opacity: 1;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-weight: 700;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: var(--transition);
+  font-family: inherit;
+}
+
+/* Utilities */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn-primary:hover {
+  background-color: var(--hover-color);
 }
