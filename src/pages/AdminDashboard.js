@@ -14,30 +14,30 @@ const AdminDashboard = ({ isAdmin }) => {
         booking.customer_name.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
+    const getAuthHeader = () => {
+        const token = localStorage.getItem('adminToken');
+        return { headers: { Authorization: `Bearer ${token}` } };
+    };
+
     useEffect(() => {
         if (!isAdmin) {
             navigate('/adminlogin123');
             return;
         }
 
+        const fetchBookings = async () => {
+            try {
+                const res = await axios.get(`${API_BASE_URL}/api/bookings`, getAuthHeader());
+                setBookings(res.data);
+                setLoading(false);
+            } catch (err) {
+                console.error('Error fetching bookings:', err);
+                setLoading(false);
+            }
+        };
+
         fetchBookings();
     }, [isAdmin, navigate]);
-
-    const getAuthHeader = () => {
-        const token = localStorage.getItem('adminToken');
-        return { headers: { Authorization: `Bearer ${token}` } };
-    };
-
-    const fetchBookings = async () => {
-        try {
-            const res = await axios.get(`${API_BASE_URL}/api/bookings`, getAuthHeader());
-            setBookings(res.data);
-            setLoading(false);
-        } catch (err) {
-            console.error('Error fetching bookings:', err);
-            setLoading(false);
-        }
-    };
 
     const handleStatusChange = async (id, newStatus) => {
         try {

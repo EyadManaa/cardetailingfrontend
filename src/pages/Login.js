@@ -68,7 +68,7 @@ const Login = ({ setIsAdmin }) => {
 
                     <div className="form-options">
                         <span className="placeholder-check"></span>
-                        <a href="#" className="forgot-password" onClick={(e) => e.preventDefault()}>Forgot password</a>
+                        <button type="button" className="forgot-password" onClick={() => alert('Feature coming soon!')} style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer', font: 'inherit' }}>Forgot password</button>
                     </div>
 
                     <button type="submit" className="login-submit-btn">Sign in</button>
